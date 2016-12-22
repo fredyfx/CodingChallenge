@@ -97,7 +97,7 @@ namespace CodingChallenge.Web.Controllers
                 var result = new { MonthlyPayment = sPayment };
                 return Json(result, JsonRequestBehavior.AllowGet);
             }
-            return Json("Error, please try again", JsonRequestBehavior.AllowGet);
+            return Json("Error, please try again with all the 3 values", JsonRequestBehavior.AllowGet);
         }
     }
 }
