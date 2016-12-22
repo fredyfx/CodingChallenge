@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Fredy Guibert</h1>
+    <h2>Coding Challenge</h2>
+    <p class="lead">I will do my best! Here we go with all the power!</p>
+    <p><a href="http://fredyfx.com" target="_blank" class="btn btn-primary btn-lg">Learn more about Fredy Guibert &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <textarea name="paragraph" class="form-control" id="paragraph" placeholder="Type in your message" rows="5"></textarea>
+    </div>
+    <div class="col-md-4">
+        <h2>Operations</h2>
+        <input type="hidden" id="operationURLS"
+               data-reverseWord="@Url.Action("ReverseWordOrder", "Home")"
+               data-reverseCharacter="@Url.Action("ReverseCharactersWithSameWordOrder","Home")"
+               data-sortingAlphabetically="@Url.Action("SortingAlphabetically","Home")"
+               data-encryp="@Url.Action("Encrypt","Home")"
+               data-calculator="@Url.Action("Calculator","Home")"
+               value="getVeryNiceJob" />
+        <button class="btn btn-primary" id="reverseWord" type="button">Reverse word order</button>
+        <button class="btn btn-primary" id="reverseCharacter" type="button">Reverse characters while maintaining word order</button>
+        <button class="btn btn-primary" id="sortingAlphabetically" type="button">Alphabetically sort words</button>
+        <button class="btn btn-primary" id="encryp" type="button">Encrypt the paragraph using a salted SHA-384 algorithm.</button>
+    </div>
+    <div class="col-md-4">
+        <h2>Result</h2>
+        <textarea name="paragraphResult" class="form-control" id="paragraphResult" rows="5"></textarea>
+        <br />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Calculator</h2>
+        <form class="form-horizontal">
+            <fieldset>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="originalLoanAmount">Original loan amount</label>
+                    <div class="col-md-4">
+                        <input id="originalLoanAmount" name="originalLoanAmount" class="form-control input-md" type="text" required>
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="loanTerm">Loan term(in months)</label>
+                    <div class="col-md-4">
+                        <input id="loanTerm" name="loanTerm" class="form-control input-md" type="text" required>
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="interestRate">Interest rate </label>
+                    <div class="col-md-4">
+                        <input id="interestRate" name="interestRate" class="form-control input-md" type="text" required>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Operations</h2>
+        <button class="btn btn-primary" id="calculator" type="button">Calculator</button>
+    </div>
+    <div class="col-md-4">
+        <h2>Result</h2>
+        <div id="result">
+
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/main")
+}
